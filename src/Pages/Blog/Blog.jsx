@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import apiResponse from "../../response";
 import PostCard from "../../Components/PostCard/PostCard";
 
@@ -14,17 +13,17 @@ export default function Blog() {
 
   const postsPerPage = viewMode === "grid" ? 6 : 5;
 
-  // 1️⃣ filter by category
+  //  filter by category
   let filtered = category
     ? posts.filter((p) => p.category === category)
     : posts;
 
-  // 2️⃣ filter by search
+  // filter by search
   filtered = filtered.filter((post) =>
     post.title.toLowerCase().includes(search.toLowerCase())
   );
 
-  // 3️⃣ pagination logic
+  // pagination logic
   const totalPages = Math.ceil(filtered.length / postsPerPage) || 1;
   const start = (page - 1) * postsPerPage;
   const paginatedPosts = filtered.slice(start, start + postsPerPage);
