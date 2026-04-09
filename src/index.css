@@ -1,8 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply font-cairo bg-darkBg text-gray-300 antialiased selection:bg-primary selection:text-black;
+    direction: rtl;
+  }
+}
 
-body {
-  @apply text-white bg-black
+@layer utilities {
+  .glass-panel {
+    @apply bg-surface backdrop-blur-md border border-white/5 shadow-xl;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }

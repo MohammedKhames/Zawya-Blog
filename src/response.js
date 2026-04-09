@@ -514,10 +514,10 @@ const apiRespons={
     { "name": "معدات", "count": 3, "color": "emerald" }
   ],
   "siteInfo": {
-    "name": "عدسة",
+    "name": "زاوية",
     "tagline": "عالم التصوير الفوتوغرافي",
     "description": "مدونة متخصصة في فن التصوير الفوتوغرافي، نشارك معكم أسرار المحترفين ونصائح عملية لتطوير مهاراتكم.",
-    "email": "hello@adasah.com",
+    "email": "hello@zawya.com",
     "social": {
       "twitter": "https://twitter.com/adasah",
       "github": "https://github.com/adasah",
