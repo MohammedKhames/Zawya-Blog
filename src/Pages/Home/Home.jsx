@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import apiResponse from '../../response';
 import PostCard from '../../Components/PostCard/PostCard';
+import CategoryBadge from '../../Components/CategoryBadge/CategoryBadge';
 
 export default function Home() {
   const { posts, siteInfo } = apiResponse;
@@ -24,7 +25,7 @@ export default function Home() {
             مرحباً بك في {siteInfo.name}
           </div>
 
-          <h1 className="text-5xl md:text-7xl font-black text-white mb-6 leading-tight">
+          <h1 className="text-4xl sm:text-5xl md:text-7xl font-black text-white mb-6 leading-tight">
             اكتشف <span className="text-primary">فن</span><br/>
             التصوير الفوتوغرافي
           </h1>
@@ -71,9 +72,9 @@ export default function Home() {
 
               {/* Text Side (Left in RTL DOM order) */}
               <div className="p-8 lg:p-12 w-full lg:w-1/2 flex flex-col justify-center relative">
-                <div className="flex items-center gap-4 mb-6 text-sm">
-                  <span className="px-3 py-1 rounded-full border border-primary/30 text-primary font-bold text-xs">{post.category}</span>
-                  <span className="text-gray-500 whitespace-nowrap"><svg className="w-4 h-4 inline-block ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>{post.readTime}</span>
+                <div className="flex items-center gap-4 mb-6">
+                  <CategoryBadge category={post.category} />
+                  <span className="text-gray-500 whitespace-nowrap text-sm"><svg className="w-4 h-4 inline-block ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>{post.readTime}</span>
                 </div>
                 
                 <h3 className="text-3xl font-bold text-white mb-4 hover:text-primary transition-colors hover:cursor-pointer line-clamp-2 md:line-clamp-3">
@@ -124,8 +125,8 @@ export default function Home() {
               <div className="relative h-56">
                 <img src={post.image} alt={post.title} className="w-full h-full object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-darkBg to-transparent pointer-events-none"></div>
-                <div className="absolute top-4 right-4 bg-darkBg/80 text-gray-300 text-xs px-3 py-1 rounded-full border border-white/10">
-                  {post.category}
+                <div className="absolute top-4 right-4">
+                  <CategoryBadge category={post.category} />
                 </div>
               </div>
 
@@ -165,9 +166,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 4. Newsletter */}
       <section className="container mx-auto px-4 z-10 relative pb-20">
-        <div className="glass-panel border border-white/5 rounded-[40px] p-8 md:p-16 text-center max-w-4xl mx-auto shadow-2xl relative overflow-hidden">
+        <div className="glass-panel border border-white/5 rounded-[32px] md:rounded-[40px] p-6 sm:p-10 md:p-16 text-center max-w-4xl mx-auto shadow-2xl relative overflow-hidden">
           <div className="absolute inset-0 bg-primary/5 opacity-50"></div>
           
           <div className="relative z-10 flex flex-col items-center">

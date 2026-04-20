@@ -30,11 +30,10 @@ export default function Navbar() {
     <nav className="fixed top-0 left-0 right-0 z-50 glass-panel border-b border-white/5 transition-all duration-300">
       <div className="container mx-auto px-4 lg:px-8 py-3 md:py-4 flex items-center justify-between">
         
-        {/* Right - Logo & Mobile Hamburger */}
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2 md:gap-3">
           {/* Hamburger Menu Toggle (Mobile Only) */}
           <button 
-            className="md:hidden text-gray-400 hover:text-white p-2" 
+            className="md:hidden text-gray-400 hover:text-white p-1" 
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -42,14 +41,14 @@ export default function Navbar() {
             </svg>
           </button>
 
-          <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center border border-primary/30 text-primary shrink-0">
+          <div className="w-9 h-9 md:w-10 md:h-10 bg-primary/10 rounded-full flex items-center justify-center border border-primary/30 text-primary shrink-0">
             <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
               <path d="M4 6h2.5l1.5-2h8l1.5 2H20a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2zm8 3a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 2a3 3 0 1 1 0 6 3 3 0 0 1 0-6z"/>
             </svg>
           </div>
-          <div className="text-right hidden sm:block">
-            <h1 className="text-xl font-black text-white tracking-tight leading-none">{siteInfo.name}</h1>
-            <p className="text-primary/80 text-[10px] font-semibold tracking-wider mt-1">{siteInfo.tagline}</p>
+          <div className="text-right hidden xs:block">
+            <h1 className="text-lg md:text-xl font-black text-white tracking-tight leading-none">{siteInfo.name}</h1>
+            <p className="text-primary/80 text-[9px] md:text-[10px] font-semibold tracking-wider mt-1">{siteInfo.tagline}</p>
           </div>
         </div>
 
@@ -76,24 +75,24 @@ export default function Navbar() {
         </div>
 
         {/* Left - Search & Button */}
-        <div className="flex items-center gap-2 md:gap-4 flex-row-reverse relative">
+        <div className="flex items-center gap-2 md:gap-4 flex-row-reverse">
           <button className="hidden sm:block bg-primary text-black px-4 md:px-6 py-2.5 rounded-full text-sm font-bold hover:bg-white transition-all duration-300 whitespace-nowrap">
             ابدأ القراءة
           </button>
           
-          <div className="relative">
+          <div className="relative flex items-center">
             <form onSubmit={handleSearchSubmit} className="flex items-center">
               <input 
                 type="text" 
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="ابحث..." 
-                className={`transition-all duration-300 bg-darkBg border border-white/20 text-white rounded-full px-4 h-10 outline-none focus:border-primary absolute md:static top-0 right-0 ${isSearchOpen ? 'w-[calc(100vw-120px)] md:w-48 opacity-100 md:mr-2 z-10 block' : 'w-0 opacity-0 px-0 border-transparent overflow-hidden hidden md:block'}`}
+                className={`transition-all duration-300 bg-[#111] border border-white/20 text-white rounded-full px-4 h-10 outline-none focus:border-primary absolute md:static top-1/2 -translate-y-1/2 right-0 ${isSearchOpen ? 'w-[calc(100vw-80px)] sm:w-64 md:w-48 opacity-100 z-10 block' : 'w-0 opacity-0 px-0 border-transparent overflow-hidden'}`}
               />
               <button 
                 type="button" 
                 onClick={() => setIsSearchOpen(!isSearchOpen)}
-                className="text-gray-400 hover:text-white transition-colors p-2 rounded-full hover:bg-white/5 z-20 relative bg-darkBg md:bg-transparent"
+                className="text-gray-400 hover:text-white transition-colors p-2 rounded-full hover:bg-white/5 z-20 relative"
               >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
               </button>

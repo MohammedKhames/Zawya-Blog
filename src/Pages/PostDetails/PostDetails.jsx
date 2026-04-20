@@ -1,6 +1,7 @@
 import { useParams, Link } from "react-router-dom";
 import apiResponse from "../../response";
 import PostCard from "../../Components/PostCard/PostCard";
+import CategoryBadge from "../../Components/CategoryBadge/CategoryBadge";
 
 export default function PostDetails() {
   const { id } = useParams();
@@ -41,23 +42,25 @@ export default function PostDetails() {
     <article className="animate-fade-in pb-20 pt-28 px-4 container mx-auto max-w-[1200px]">
       
       {/* Cover Image & Header Top */}
-      <header className="mb-12 relative rounded-3xl overflow-hidden glass-panel aspect-video md:aspect-[21/9] shadow-[0_0_50px_rgba(0,0,0,0.5)]">
+      <header className="mb-12 relative rounded-3xl overflow-hidden glass-panel aspect-video sm:aspect-video md:aspect-[21/9] shadow-[0_0_50px_rgba(0,0,0,0.5)]">
         <img src={post.image} alt={post.title} className="w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex flex-col justify-end p-8 md:p-16">
-          <span className="bg-primary/20 text-primary border border-primary/30 px-4 py-1 rounded-full text-sm font-bold w-max mb-4">{post.category}</span>
-          <h1 className="text-3xl md:text-5xl font-black text-white mb-4 leading-tight shadow-md">
+        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex flex-col justify-end p-6 md:p-16">
+          <div className="mb-4">
+            <CategoryBadge category={post.category} />
+          </div>
+          <h1 className="text-2xl sm:text-3xl md:text-5xl font-black text-white mb-4 leading-tight shadow-md">
             {post.title}
           </h1>
-          <p className="text-lg md:text-xl text-gray-300 max-w-3xl">
+          <p className="text-md sm:text-lg md:text-xl text-gray-300 max-w-3xl line-clamp-2 md:line-clamp-none">
             {post.excerpt}
           </p>
         </div>
       </header>
 
-      <div className="flex flex-col lg:flex-row gap-10 lg:h-[1200px] xl:h-[calc(100vh-10rem)]">
+      <div className="flex flex-col lg:flex-row gap-10">
         
-        {/* Right Column - Main Content (First in DOM = Right in RTL) */}
-        <div className="w-full lg:w-8/12 text-right overflow-y-auto pr-2 pl-4 [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-track]:bg-black/20 [&::-webkit-scrollbar-thumb]:bg-white/10 [&::-webkit-scrollbar-thumb]:rounded-full hover:[&::-webkit-scrollbar-thumb]:bg-primary/50 transition-colors pb-10">
+        {/* Right Column - Main Content (First in RTL = Right) */}
+        <div className="w-full lg:w-8/12 text-right pb-10">
           
           <div className="prose prose-invert prose-lg max-w-none text-gray-300 mb-16">
             {blocks.map((block, index) => {
@@ -100,8 +103,8 @@ export default function PostDetails() {
           </div>
 
           {/* Share Box */}
-          <div className="bg-[#111] border border-white/5 rounded-[24px] p-6 mb-6 flex flex-col md:flex-row items-center justify-between gap-6">
-            <div className="flex items-center gap-3 order-2 md:order-1 w-full md:w-auto overflow-x-auto pb-2 md:pb-0">
+          <div className="bg-[#111] border border-white/5 rounded-[24px] p-6 mb-6 flex flex-col sm:flex-row items-center justify-between gap-6">
+            <div className="flex items-center gap-3 order-2 sm:order-1 w-full sm:w-auto overflow-x-auto pb-2 sm:pb-0">
               <button className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:text-white transition-colors shrink-0">
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path></svg>
               </button>
@@ -116,7 +119,7 @@ export default function PostDetails() {
               </button>
             </div>
             
-            <div className="flex items-center gap-3 order-1 md:order-2">
+            <div className="flex items-center gap-3 order-1 sm:order-2">
               <h4 className="text-white font-bold text-lg m-0">شارك المقال</h4>
               <div className="bg-primary/20 w-8 h-8 rounded-lg flex items-center justify-center text-primary">
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"></path></svg>
@@ -128,16 +131,16 @@ export default function PostDetails() {
           <div className="bg-[#111] border border-white/5 rounded-[24px] p-8 flex flex-col md:flex-row items-center justify-between gap-6 relative overflow-hidden">
             <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full blur-3xl"></div>
             
-            <div className="text-right flex-1 z-10 w-full mb-4 md:mb-0">
+            <div className="text-right flex-1 z-10 w-full mb-0">
               <p className="text-primary text-xs font-bold mb-1">كاتب المقال</p>
-              <h3 className="text-2xl font-black text-white mb-1">{post.author.name}</h3>
+              <h3 className="text-xl md:text-2xl font-black text-white mb-1">{post.author.name}</h3>
               <p className="text-gray-500 text-sm mb-4">{post.author.role}</p>
               <p className="text-gray-400 text-sm leading-relaxed max-w-sm">
                 مصور محترف شغوف بمشاركة المعرفة والخبرات في عالم التصوير الفوتوغرافي.
               </p>
             </div>
             
-            <div className="shrink-0 z-10 relative mt-4 md:mt-0">
+            <div className="shrink-0 z-10 relative mt-0">
               <img src={post.author.avatar} alt={post.author.name} className="w-24 h-24 rounded-2xl object-cover border-2 border-white/10 shadow-xl" />
               <div className="absolute -bottom-2 -left-2 w-6 h-6 bg-primary rounded-full border-2 border-[#111] flex items-center justify-center">
                 <svg className="w-3 h-3 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7"></path></svg>
@@ -147,14 +150,14 @@ export default function PostDetails() {
           
         </div>
 
-        {/* Left Column - Sidebar (Second in DOM = Left in RTL) */}
-        <div className="w-full lg:w-4/12 space-y-6 overflow-y-auto pl-2 pr-4 [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-track]:bg-black/20 [&::-webkit-scrollbar-thumb]:bg-white/10 [&::-webkit-scrollbar-thumb]:rounded-full hover:[&::-webkit-scrollbar-thumb]:bg-primary/50 transition-colors pb-10">
+        {/* Left Column - Sidebar (Desktop: Left, Mobile: Bottom) */}
+        <div className="w-full lg:w-4/12 space-y-6">
           
           {/* Table of Contents Box */}
           <div className="bg-[#111] border border-white/5 rounded-[24px] p-6 lg:p-8 shrink-0 relative overflow-hidden">
             <div className="absolute top-0 right-0 w-20 h-20 bg-primary/10 rounded-full blur-xl"></div>
             
-            <div className="flex items-center gap-3 mb-8 z-10 relative">
+            <div className="flex items-center gap-3 mb-6 sm:mb-8 z-10 relative">
               <div className="bg-primary/20 w-8 h-8 rounded-lg flex items-center justify-center text-primary">
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
               </div>

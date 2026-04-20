@@ -12,7 +12,7 @@ export default function Layout() {
       </div>
       
       {/* Main Container Limiting the Website Width */}
-      <div className="relative z-10 flex flex-col min-h-screen w-full max-w-[1440px] px-4 md:px-8 xl:px-16 mx-auto bg-darkBg shadow-2xl border-x border-white/[0.02]">
+      <div className="relative z-10 flex flex-col min-h-screen w-full max-w-[1440px] mx-auto bg-darkBg shadow-2xl border-x border-white/[0.02]">
         <Navbar />
         <main className="flex-1 w-full pt-28 pb-10">
           <Outlet />

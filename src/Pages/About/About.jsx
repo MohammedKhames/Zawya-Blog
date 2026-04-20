@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import apiResponse from "../../response";
 
 export default function About() {
-  const { siteInfo, posts } = apiResponse;
+  const { posts } = apiResponse;
 
   // Fake stats for the stats section
   const stats = [
@@ -48,7 +48,7 @@ export default function About() {
             </span>
           </div>
           
-          <h1 className="text-5xl md:text-6xl font-black text-white mb-6">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-black text-white mb-6">
             مهمتنا هي <span className="text-primary">الإعلام والإلهام</span>
           </h1>
           
@@ -136,7 +136,7 @@ export default function About() {
 
       {/* Section 4: Banner */}
       <section className="container mx-auto px-4 py-8 mb-16">
-        <div className="bg-gradient-to-r from-[#cc5500] via-primary to-[#ff8c00] rounded-[40px] p-12 md:p-16 text-center max-w-6xl mx-auto shadow-2xl relative overflow-hidden">
+        <div className="bg-gradient-to-r from-[#cc5500] via-primary to-[#ff8c00] rounded-[32px] md:rounded-[40px] p-8 md:p-16 text-center max-w-6xl mx-auto shadow-2xl relative overflow-hidden">
           <div className="absolute inset-0 bg-white/5"></div>
           <div className="relative z-10 text-center">
             <h2 className="text-3xl md:text-5xl font-black text-white mb-4 drop-shadow-md">لديك أسئلة؟ دعنا نتحدث!</h2>
