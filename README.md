@@ -2,7 +2,6 @@
 
 **Zawya Blog** is a modern, professional, and fully responsive photography blog designed to share tips, tricks, and insights from the world of photography. Featuring a stunning dark-themed UI with glassmorphism effects, it provides an immersive reading experience for photography enthusiasts.
 
-[Arabic Version below / النسخة العربية أدناه]
 
 ---
 
@@ -78,6 +77,16 @@
 - **الخطوط**: خط [Cairo](https://fonts.google.com/specimen/Cairo) العربي المميز.
 
 ---
+
+## screenshots
+
+<img width="1893" height="837" alt="image" src="https://github.com/user-attachments/assets/5a72053b-dd62-4966-b28f-2cdc98d2a494" />
+<img width="1811" height="876" alt="image" src="https://github.com/user-attachments/assets/881b18ac-af5a-4a52-b440-13bb5b75322f" />
+<img width="1876" height="837" alt="image" src="https://github.com/user-attachments/assets/4affc37b-aad9-49a4-aa51-581d4c882be3" />
+<img width="1761" height="851" alt="image" src="https://github.com/user-attachments/assets/908455cb-9a19-4239-9266-dba1056fde69" />
+<img width="1793" height="849" alt="image" src="https://github.com/user-attachments/assets/832b3044-21e8-4f05-8c9c-f2b748e0039e" />
+<img width="1787" height="869" alt="image" src="https://github.com/user-attachments/assets/1516114f-8ecf-4076-8840-925733640f0f" />
+
 
 ## 👨‍💻 Author
 
